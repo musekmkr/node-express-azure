@@ -1,5 +1,3 @@
-import { engine } from 'express-handlebars';
-
 const config = require('./config');
 const express = require('express');
 const path = require('path');
@@ -12,7 +10,7 @@ const contact = require('./routes/contact');
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', engine());
+app.engine('handlebars', exphbs.engine);
 app.set('view engine', 'handlebars');
 app.set('port', config.port);
 
